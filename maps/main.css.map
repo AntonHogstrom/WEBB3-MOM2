@@ -1,0 +1,1 @@
+{"version":3,"sources":["button.css"],"names":[],"mappings":"AAAA,OACA,qBAAA,CACA,YACA","file":"../css/main.css","sourcesContent":["button {\r\n    background-color: pink;\r\n    padding: 10px;\r\n}"]}
