@@ -1,0 +1,6 @@
+/*Variabels defined in src/style.css*/
+
+p {
+    line-height: 1.6em;
+    color: var(--primary-text-color);
+}

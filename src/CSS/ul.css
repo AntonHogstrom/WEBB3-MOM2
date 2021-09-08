@@ -1,0 +1,9 @@
+header ul, footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+header ul {
+    margin-right: 10px;
+}

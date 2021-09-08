@@ -47,4 +47,8 @@ HTML, CSS, JS och IMG har alla varsin task. I dessa funktioner returneras först
 
 Det finns dessutom en "watchTask" som initierar browserSync som vilket är ett plugin för att känna av när filerna har ändrats och göra en uppdatering automatiskt i webbläsaren, för att kunna jobba i en enkel testmiljö. En watch-funktion skivs för varje task som beordrar en refresh när respektiva filtyp ändras eller om det läggs till eller tas bort. Att ha det separat istället för allt i en watch-funktion verkade hjälpa med hastigheten, att endast filerna av samma filtyp som den som ändrades behöver kollas upp vid ändring.
 
+För att köra programmet behöver man installera plugins. För detta krävs NodeJs/NPM.
+I kommandotolken/terminalen skrivs "npm install" för att nödvändiga installationer körs.
+Därefter skrivs "gulp" för att starta projektet. Funktioner körs och watcher kommer fortsätta ligga vilandes.
+
 ## Ta även med om du lagt till något extra.

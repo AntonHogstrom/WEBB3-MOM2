@@ -1,0 +1,14 @@
+/*Variabels defined in src/style.css*/
+
+a {
+    text-decoration: none;
+    font-weight: 800;
+}
+
+main a {
+    color: var(--primary-text-color);
+}
+
+header a, footer a {
+    color: var(--secondary-text-color);
+}

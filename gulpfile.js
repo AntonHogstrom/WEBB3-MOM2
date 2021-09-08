@@ -71,7 +71,8 @@ function watchTask() {
     watch(files.jsPath, jsTask).on('change', browserSync.reload);
     watch(files.htmlPath, copyHTML).on('change', browserSync.reload);
     watch(files.cssPath, cssTask).on('change', browserSync.reload);
-    watch(files.imgPath, (imgTask, webpTask)).on('change', browserSync.reload);
+    watch(files.imgPath, imgTask).on('change', browserSync.reload);
+    watch(files.imgPath, webpTask).on('change', browserSync.reload);
 }
 
 

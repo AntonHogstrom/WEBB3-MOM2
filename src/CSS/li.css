@@ -1,0 +1,15 @@
+/*Variabels defined in src/style.css*/
+
+li {
+    list-style: none;
+}
+header li {
+    margin: 0 10px;
+    color: var(--secondary-text-color);
+}
+main li {
+    color: var(--primary-text-color);
+}
+footer li {
+    color: var(--secondary-text-color);
+}

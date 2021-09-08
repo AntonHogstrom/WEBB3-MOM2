@@ -1,0 +1,37 @@
+/*Import normalize*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" );
+
+/*Variables for background colors, text colors, some heights*/
+:root {
+    --primary-background: rgb(36, 129, 93);
+    --secondary-background: rgb(96, 160, 185);
+    --primary-text-color: rgb(24, 14, 68);
+    --secondary-text-color: rgb(204, 204, 204);
+    --header-height: 250px;
+    --footer-height: 50px;
+}
+
+header {
+    background-color: var(--primary-background);
+    margin: 10px auto;
+    padding: 10px 5px;
+    height: var(--header-height);
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+}
+main {
+    background-color: var(--secondary-background);
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px 15px;
+    /*calc for 100vh - (header height + footer height) to figure out a decent min height for main*/
+    min-height: calc(100vh - (var(--header-height) + var(--foter-height)));
+}
+footer {
+    background-color: var(--primary-background);
+    margin: 10px auto;
+    padding: 10px 5px;
+    height: var(--footer-height);
+}
