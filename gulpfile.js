@@ -52,14 +52,14 @@ function cssTask() {
 function imgTask() {
     return src(files.imgPath)
     .pipe(imageMin())
-    .pipe(dest('pub/IMG'))
+    .pipe(dest('pub/img'))
 }
 
 //WEBP-task, returns images, optimizes, sends to pub/img/webp
 function webpTask() {
     return src(files.imgPath)
     .pipe(webp())
-    .pipe(dest('pub/IMG/webp'));
+    .pipe(dest('pub/img/webp'));
 }
 
 //Watch-task, Initiates browserSync on pub folder. Watch file-paths seperately, reload on update.
