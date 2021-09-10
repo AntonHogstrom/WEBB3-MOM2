@@ -17,7 +17,7 @@ const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/css/*.css",
     jsPath: "src/js/*.js",
-    imgPath: "src/img/*"
+    imgPath: "src/IMG/*"
 }
 
 //HTML-task, returns HTML-files from files.htmlPath and copy them over to destination pub (folder)
@@ -52,14 +52,14 @@ function cssTask() {
 function imgTask() {
     return src(files.imgPath)
     .pipe(imageMin())
-    .pipe(dest('pub/img'))
+    .pipe(dest('pub/IMG'))
 }
 
 //WEBP-task, returns images, optimizes, sends to pub/img/webp
 function webpTask() {
     return src(files.imgPath)
     .pipe(webp())
-    .pipe(dest('pub/img/webp'));
+    .pipe(dest('pub/IMG/webp'));
 }
 
 //Watch-task, Initiates browserSync on pub folder. Watch file-paths seperately, reload on update.
