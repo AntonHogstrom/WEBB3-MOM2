@@ -17,7 +17,7 @@ const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/css/*.css",
     jsPath: "src/js/*.js",
-    imgPath: "src/IMG/*"
+    imgPath: "src/img/*"
 }
 
 //HTML-task, returns HTML-files from files.htmlPath and copy them over to destination pub (folder)
@@ -52,7 +52,7 @@ function cssTask() {
 function imgTask() {
     return src(files.imgPath)
     .pipe(imageMin())
-    .pipe(dest('pub/IMG'))
+    .pipe(dest('pub/img'))
 }
 
 //WEBP-task, returns images, optimizes, sends to pub/img/webp
