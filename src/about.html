@@ -5,22 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Moment 2 - About</title>
+    <title>NodeJs, Gulp</title>
 </head>
 <body>
     <header>
         <picture>
-            <source srcset="IMG/webp/img1.webp" type="image/webp">
-            <img src="IMG/img1.jpg" alt="logo">
+            <source srcset="IMG/webp/nodejs.webp" type="image/webp">
+            <img src="IMG/nodejs.png" alt="logo">
         </picture>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </header>
-    <main>
-        <h1>About</h1>
-        <p>Paragraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. ParaparaparagraphParagraph paragraph. Paraparaparagraph</p>
+    <main id="about">
+        <h1>Webb III - Moment 2: NodeJs and Automation with Gulp</h1>
+
+        <span class="bold">Vad automatiserings-processens syfte är.</span>
+        <p>Syftet med automatiserings-processen är att repetativa uppgifter, som att minifiera, konvertera, kompilera osv kan göras med en kodsnutt, vilket i längden blir mer effektivt än att behöva göra detta manuellt varje gång projektet ska testas, vid utveckling görs detta konstant.</p>
+
+        <span class="bold">anger om vilka paket och verktyg du använt, och varför du valt just dessa.</span><br>
+        <span class="bold">Jag har använt mig av följande:</span><br><br>
+
+        <span class="bold">gulp</span>
+        <p>Jag har använt mig av Gulp som automatiseringsverktyg för att kunna nyttja enkla och smidiga plugins till Gulp som ger ytterligare funktioner.</p>
+
+        <span class="bold">gulp-concat</span>
+        <p>Jag har använt mig av gulp-concat för att konkatenera JS och CSS för att samla samtliga js filer tillsammans och samtliga css filer tillsammans för publikation/test.</p>
+
+        <span class="bold">gulp-terser</span>
+        <p>Jag har använt gulp-terser för att ta bort kommentarer och blank-space i javascript-filer i syfte med att förminska filstorlek.</p>
+
+        <span class="bold">gulp-postcss</span>
+        <p>Jag har använt postcss i syfte om att få tillgång till cssnano och autoprefixer.</p>
+
+        <span class="bold">cssnano</span>
+        <p>Jag har använt cssnano i syfte om att ta bort kommentarer samt blank-space från CSS-filen inför publicering.</p>
+
+        <span class="bold">autoprefixer</span>
+        <p>Jag har använt autoprefixer för att automatiskt skapa vendor-prefixes för CSS för att skapa stöd för alla webbläsare.</p>
+
+        <span class="bold">gulp-htmlmin</span>
+        <p>Jag har använt gulp-htmlmin för att minifiera html-kod för att ta bort kommentarer och blank-space vilket minskar filstorlek.</p>
+
+
+        <span class="bold">browser-sync</span>
+        <p>Jag har använt browser-sync i syfte om att starta en lokal server som kan auto-refresha webbläsarfönstret vid ändringar i projektfilerna.</p>
+
+        <span class="bold">gulp-sourcemaps</span>
+        <p>Jag använder gulp-sourcemaps för att vid felsökning lättare kunna hitta i vilken src-fil felet ligger i, efter publicering.</p>
+
+        <span class="bold">gulp-imagemin</span>
+        <p>Jag använder gulp-imagemin för att automatisera bildoptimering och minska fil-storlek.</p>
+
+        <span class="bold">beskriv systemet du skapat, hur man startar upp det och de tasks som ingår.</span>
+        <p>Systemet jag skapat lagrar gulp och de olika pluginsen i variabler för att kunna användas.</p> 
+        <p>En variabel, files, innehåller ett objekt med path till de olika filerna i respektive path där html, css, js och bilder ligger.</p>
+        <p>HTML, CSS, JS och IMG har alla varsin task. I dessa funktioner returneras först samtliga filer som stämmer överens med dess path och fil-ändelse, vad som angets i path-objektet. Därefter med hjälp av gulps asynkrona .pipe() funktion utförs automatisering för att exempelvis initiera en sourcemap, konkatenera filer av samma typ till en, ta bort kommentarer och white space, skapa en sourcemap, skriva filen i pub-katalogen. imgTask använder ett plugin för att optimera bilderna.</p>
+        <p>Det finns dessutom en "watchTask" som initierar browserSync som vilket är ett plugin för att känna av när filerna har ändrats och göra en uppdatering automatiskt i webbläsaren, för att kunna jobba i en enkel testmiljö. En watch-funktion skivs för varje task som beordrar en refresh när respektiva filtyp ändras eller om det läggs till eller tas bort. Att ha det separat istället för allt i en watch-funktion verkade hjälpa med hastigheten, att endast filerna av samma filtyp som den som ändrades behöver kollas upp vid ändring.</p>
+        <p>För att köra programmet behöver man installera plugins. För detta krävs NodeJs/NPM.
+        I kommandotolken/terminalen skrivs "npm install" för att nödvändiga installationer körs.
+        Därefter skrivs "gulp" för att starta projektet. Funktioner körs och watcher kommer fortsätta ligga vilandes.</p>
+
+        <span class="bold">Ta även med om du lagt till något extra.</span>
+
     </main>
     <footer>
         <ul>
