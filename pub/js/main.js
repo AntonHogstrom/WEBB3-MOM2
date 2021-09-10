@@ -1,2 +1,0 @@
-const quoteButton=document.getElementById("quoteButton"),quoteDiv=document.getElementById("quoteDiv"),quoteP=document.getElementById("quoteP"),createP=document.createElement("p");quoteButton.addEventListener("click",(async()=>{const t=await fetch("https://animechan.vercel.app/api/random");if(!t.ok){const e=`You got an ERROR: ${t.status}`;throw new Error(e)}{const e=await t.json();quoteP?quoteP.innerText(e.quote):(createP.innerText=e.quote,quoteDiv.appendChild(createP))}}));
-//# sourceMappingURL=../maps/main.js.map
