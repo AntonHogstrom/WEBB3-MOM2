@@ -1,4 +1,8 @@
-button {
-    background-color: pink;
-    padding: 10px;
+#quoteButton {
+    padding: 10px 30%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
 }

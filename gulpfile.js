@@ -1,4 +1,4 @@
-//Gulp Methods
+//Gulp Methods installed from NPM packages
 const {src, dest, watch, series, parallel} = require('gulp');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
@@ -11,7 +11,8 @@ const sourceMap = require('gulp-sourcemaps');
 const imageMin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
-//directories
+//src directories, targets all html, all css in css folder, all js in js folder and everything in img folder.
+//img folder should only contain images.
 const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/css/*.css",
@@ -26,7 +27,7 @@ function copyHTML() {
     .pipe(dest('pub'));
 }
 
-//JS-task, contatinate, minify JS-files.
+//JS-task, initiates sourcemap, contatinate, minify JS-files, writes out sourcemap file, push files to pub (folder).
 function jsTask() {
     return src(files.jsPath)
     .pipe(sourceMap.init())
@@ -36,7 +37,7 @@ function jsTask() {
     .pipe(dest('pub/js'));
 }
 
-//CSS-task, contatinate, minify CSS-files
+//CSS-task, initiates sourcemap, contatinate, autoprefixing(vendor), minify CSS-files, writes out sourcemap file, push files to pub (folder), activate browserSync stream to make sure CSS updates loads
 function cssTask() {
     return src(files.cssPath)
     .pipe(sourceMap.init())
@@ -47,21 +48,22 @@ function cssTask() {
     .pipe(browserSync.stream());
 }
 
-//IMG-task, returns images, optimizes
+//IMG-task, returns images, optimizes, sends to pub/img.
 function imgTask() {
     return src(files.imgPath)
     .pipe(imageMin())
     .pipe(dest('pub/IMG'))
 }
 
-//WEBP-task, returns images, optimizes
+//WEBP-task, returns images, optimizes, sends to pub/img/webp
 function webpTask() {
     return src(files.imgPath)
     .pipe(webp())
     .pipe(dest('pub/img/webp'));
 }
 
-//Watch-task, 
+//Watch-task, Initiates browserSync on pub folder. Watch file-paths seperately, reload on update.
+//only updated files are reloaded
 function watchTask() {
 
     browserSync.init({
@@ -77,7 +79,7 @@ function watchTask() {
 
 
 
-
+//gulp default exports.
 exports.default = series(
     parallel(copyHTML, jsTask, cssTask, imgTask, webpTask),
     watchTask
