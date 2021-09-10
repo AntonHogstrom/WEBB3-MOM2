@@ -12,7 +12,7 @@ const imageMin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
 //src directories, targets all html, all css in css folder, all js in js folder and everything in img folder.
-//img folder should only contain images.
+//img folder should only contain images...
 const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/css/*.css",
