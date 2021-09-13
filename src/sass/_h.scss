@@ -1,0 +1,56 @@
+/*Variabels defined in src/style.css*/
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1em;
+    position: relative;
+}
+h2 {
+    font-size: 2.0em;
+}
+h3 {
+    font-size: 1.8em;
+}
+h4 {
+    font-size: 1.6em;
+}
+h5 {
+    font-size: 1.4em;
+}
+h6 {
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+    font-family: 'Anton', sans-serif;
+}
+
+/*Animation for h1 on about page*/
+@keyframes heading {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 25%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+  }
+  
+  #about h1::after {
+    content: '';
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    height: 5px;
+    background-color: $secondary-color;
+    bottom: -5px;
+    border-bottom: 2px solid $primary-color;
+    animation-name: heading;
+    animation-duration: 2s;
+  }

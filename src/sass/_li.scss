@@ -1,0 +1,19 @@
+/*Variabels defined in src/style.css*/
+
+li {
+    list-style: none;
+}
+header li {
+    margin: 5px 10px;
+    background-color: $secondary-background;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+}
+main li {
+    color: $primary-color;
+}
+footer li {
+    color: $secondary-color;
+}

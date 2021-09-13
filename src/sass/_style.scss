@@ -1,0 +1,53 @@
+/*Import normalize*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" );
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&display=swap');
+
+
+/*Variables for background colors, text colors*/
+
+
+$primary-color: rgb(24, 14, 68);
+$secondary-color: rgb(204, 204, 204);
+$primary-background: rgb(36, 129, 93);
+$secondary-background: rgb(96, 160, 185);
+
+
+/*Import SASS partials*/
+@import 'a';
+@import 'button';
+@import 'div';
+@import 'h';
+@import 'li';
+@import 'p';
+@import 'picture';
+@import 'span';
+@import 'ul';
+
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    background-color: $primary-background;
+    margin: 10px auto;
+    padding: 10px 5px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+
+}
+main {
+    background-color: $secondary-background;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px 15px;
+}
+#about {
+    max-width: 500px;
+}
+footer {
+    background-color: $primary-background;
+    margin: 10px auto;
+    padding: 10px 5px;
+}
