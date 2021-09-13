@@ -1,5 +1,6 @@
 /*Import normalize*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" );
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&display=swap');
 
 /*Variables for background colors, text colors, some heights*/
 :root {
@@ -9,6 +10,10 @@
     --secondary-text-color: rgb(204, 204, 204);
     --header-height: 250px;
     --footer-height: 50px;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 header {
@@ -28,6 +33,9 @@ main {
     padding: 10px 15px;
     /*calc for 100vh - (header height + footer height) to figure out a decent min height for main*/
     min-height: calc(100vh - (var(--header-height) + var(--foter-height)));
+}
+#about {
+    max-width: 500px;
 }
 footer {
     background-color: var(--primary-background);

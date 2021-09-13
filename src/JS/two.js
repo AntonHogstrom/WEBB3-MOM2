@@ -1,0 +1,1 @@
+let pointLessVariable = "blabla for content";
